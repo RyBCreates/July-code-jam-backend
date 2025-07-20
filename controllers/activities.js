@@ -13,5 +13,9 @@ const getActivities = async (req, res) => {
 };
 
 // Get one activity
+const getActivityById = async (req, res) => {
+  try {
+  } catch {}
+};
 
-module.exports = { getActivities };
+module.exports = { getActivities, getActivityById };
