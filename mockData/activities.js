@@ -9,6 +9,8 @@ const activities = [
     entrancePass: "No",
     gearNeeded: "No",
     camping: "No",
+    image:
+      "https://www.thewanderingqueen.com/wp-content/uploads/2022/04/Best-Hikes-In-Red-Rock-Canyon-1-of-4.jpg",
   },
   {
     name: "Garden of the Gods",
@@ -20,6 +22,8 @@ const activities = [
     entrancePass: "No",
     gearNeeded: "No",
     camping: "No",
+    image:
+      "https://images.squarespace-cdn.com/content/v1/5bad2c26d74562245b63d094/1ebb4786-2ed9-43be-a105-0fbce71e7b6b/perkins+central+garden+loop+in+garden+of+the+gods",
   },
   {
     name: "Chautauqua Park",
@@ -31,6 +35,8 @@ const activities = [
     entrancePass: "No",
     gearNeeded: "No",
     camping: "No",
+    image:
+      "https://images.squarespace-cdn.com/content/v1/534b1517e4b0b2883888bafe/709dc962-9528-481c-9869-557b4a8d1d64/Green+Mountain+Loop+Trail+Personal+Trainer.jpeg",
   },
   {
     name: "Rocky Mountain NP",
@@ -42,6 +48,8 @@ const activities = [
     entrancePass: "Yes",
     gearNeeded: "No",
     camping: "Yes",
+    image:
+      "https://theworldtravelguy.com/wp-content/uploads/2022/10/DSCF0146_900-2.jpg",
   },
   {
     name: "Rocky Mountain NP",
@@ -53,6 +61,8 @@ const activities = [
     entrancePass: "Yes",
     gearNeeded: "Yes",
     camping: "Yes",
+    image:
+      "https://www.litaofthepack.com/wp-content/uploads/2022/06/sky-pond-views-too.jpg",
   },
   {
     name: "Manitou Springs",
@@ -64,6 +74,8 @@ const activities = [
     entrancePass: "No",
     gearNeeded: "No",
     camping: "No",
+    image:
+      "https://outdoorbeginner.com/wp-content/uploads/2019/11/beginners-guide-hiking-the-incline-safe-dangerous-img_2327.jpg?w=625",
   },
   {
     name: "Flatirons",
@@ -75,6 +87,8 @@ const activities = [
     entrancePass: "No",
     gearNeeded: "No",
     camping: "No",
+    image:
+      "https://www.litaofthepack.com/wp-content/uploads/2022/06/Flatirons-Boulder-768x1024.jpg",
   },
   {
     name: "Boulder",
@@ -86,6 +100,8 @@ const activities = [
     entrancePass: "No",
     gearNeeded: "No",
     camping: "No",
+    image:
+      "https://i.redd.it/hike-up-to-bear-peak-in-boulder-co-v0-cl6kw1n549td1.jpg?width=3024&format=pjpg&auto=webp&s=c3269ac8ee179dbec292b0957b8ca4502193da3a",
   },
   {
     name: "Eldorado Canyon",
@@ -97,6 +113,8 @@ const activities = [
     entrancePass: "Yes",
     gearNeeded: "No",
     camping: "No",
+    image:
+      "https://outdoorbeginner.com/wp-content/uploads/2014/12/fccc9-img_4681-e1598820282278.jpg?w=750",
   },
   {
     name: "Glenwood Canyon",
@@ -166,4 +184,4 @@ const activities = [
   },
 ];
 
-module.exports = activities;
+export { activities };
