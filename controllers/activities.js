@@ -9,4 +9,6 @@ const getActivities = (req, res) => {
   }
 };
 
+// Get one activity
+
 module.exports = { getActivities };
