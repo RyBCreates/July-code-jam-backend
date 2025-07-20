@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const app = express();
 const PORT = process.env.PORT || 3003;
 
-const MONGODB_URI = "mongodb://127.0.0.1:27017/coloRUSH";
+const MONGODB_URI = "mongodb://127.0.0.1:27017/coloRUSH_db";
 
 mongoose
   .connect(MONGODB_URI, {})
