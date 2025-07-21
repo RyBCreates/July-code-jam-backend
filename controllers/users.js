@@ -3,13 +3,13 @@ const jwt = require("jsonwebtoken");
 const { JWT_SECRET } = require("../utils/config");
 
 const User = require("../models/User");
-const {
-  BadRequestError,
-  NotFoundError,
-  UnauthorizedError,
-  ConflictError,
-  InternalServerError,
-} = require("../utils/errors/errors");
+// const {
+//   BadRequestError,
+//   NotFoundError,
+//   UnauthorizedError,
+//   ConflictError,
+//   InternalServerError,
+// } = require("../utils/errors/errors");
 
 // get user by ID
 const getCurrentUser = async (req, res, next) => {

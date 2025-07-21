@@ -11,10 +11,15 @@ const auth = (req, res, next) => {
   const token = authorization.replace("Bearer ", "");
   try {
     const payload = jwt.verify(token, JWT_SECRET);
-    req.user = payload;
+
+    if (!payload.userId) {
+      return next(new UnauthorizedError("Invalid token payload"));
+    }
+
+    req.user = { userId: payload.userId };
     return next();
   } catch (err) {
-    console.error(err);
+    console.error("JWT verification error:", err.message);
     return next(new UnauthorizedError("Authorization required"));
   }
 };
