@@ -12,7 +12,7 @@ import folium
 from folium import plugins
 
 # %%
-data = pd.read_json("Sohini July code jam.json")
+data = pd.read_json("Sohini_July_code_jam.json")
 data
 
 # %%
@@ -133,7 +133,7 @@ def get_knn(df, n, k, metric):
     return df_res
 
 # %%
- get_knn(data,7,8, 'haversine')
+get_knn(data,7,8, 'haversine')
 
 # %% [markdown]
 # ## Creating data frame with the hiking trails
@@ -155,7 +155,6 @@ hiking_location['Longitude'] = pd.to_numeric(hiking_location['Longitude'], error
 route_coords = [
     (40.31196, -105.64581), # Bear Lake Loop
     (39.09991, -106.94192), #Maroon Lake Scenic Loop Trail
-    (29.951722,-95.237709), #East-West and Deer Trail Loop
     (40.0008,-105.2836),   #Chautauqua Trail
     (38.811,-104.8599), #Buffalo Canyon Trail
     (37.4286,-107.7794),  #Spud Lake Trail

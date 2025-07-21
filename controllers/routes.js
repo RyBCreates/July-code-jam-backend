@@ -11,7 +11,7 @@ const optimizeRoute = (req, res) => {
   }
 
   const python = spawn("python3", [
-    path.join(__dirname, "../route_optimizer.py"),
+    path.join(__dirname, "../scripts/route-optimizer.py"),
   ]);
 
   let output = "";
@@ -29,16 +29,12 @@ const optimizeRoute = (req, res) => {
       const result = JSON.parse(output);
       res.json(result);
     } catch (err) {
-      res
-        .status(500)
-        .json({ message: "Failed to parse Python output", error: err.message });
+      res.status(500).json({
+        message: "Failed to parse Python output",
+        error: err.message,
+      });
     }
   });
-
-  python.stdin.write(JSON.stringify(locations));
-  python.stdin.end();
 };
 
 module.exports = { optimizeRoute };
-
-// Used ChatGPT to tell me how to connect the python file
