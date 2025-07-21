@@ -1,8 +1,33 @@
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const User = require("../models/User");
+const { JWT_SECRET } = require("../utils/config");
 
-const JWT_SECRET = process.env.JWT_SECRET || "secret-key";
+const User = require("../models/User");
+const {
+  BadRequestError,
+  NotFoundError,
+  UnauthorizedError,
+  ConflictError,
+  InternalServerError,
+} = require("../utils/errors/errors");
+
+// get user by ID
+const getCurrentUser = async (req, res, next) => {
+  const userId = req.user.userId;
+  try {
+    const user = await User.findById(userId).select("-password");
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    res.status(200).json(user);
+  } catch (err) {
+    res.status(500).json({
+      message: "Failed to fetch user",
+      error: err.message,
+    });
+  }
+};
 
 // Register a User
 const registerUser = async (req, res) => {
@@ -50,4 +75,4 @@ const loginUser = async (req, res) => {
   }
 };
 
-module.exports = { registerUser, loginUser };
+module.exports = { getCurrentUser, registerUser, loginUser };
