@@ -11,7 +11,7 @@ const optimizeRoute = (req, res) => {
   }
 
   const python = spawn("python3", [
-    path.join(__dirname, "../scripts/route-optimizer.py"),
+    path.join(__dirname, "../scripts/newOptimalRoute.py"),
   ]);
 
   let output = "";
