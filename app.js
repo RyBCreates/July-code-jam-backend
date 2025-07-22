@@ -1,10 +1,12 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
-const PORT = process.env.PORT || 3003;
 
-const MONGODB_URI = "mongodb://127.0.0.1:27017/coloRUSH_db";
+const { PORT = 3003 } = process.env;
+const MONGODB_URI = process.env.MONGODB_URI;
+// const MONGODB_URI = "mongodb://127.0.0.1:27017/coloRUSH_db";
 
 mongoose
   .connect(MONGODB_URI, {})
@@ -13,12 +15,7 @@ mongoose
 
 app.use(express.json());
 
-app.use(
-  cors({
-    origin: "http://localhost:3001",
-    credentials: true,
-  })
-);
+app.use(cors());
 
 // Routes
 const index = require("./routes/index");
