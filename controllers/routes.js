@@ -35,6 +35,11 @@ const optimizeRoute = (req, res) => {
       });
     }
   });
+
+  python.stdin.write(JSON.stringify({ locations }));
+  python.stdin.end();
 };
 
 module.exports = { optimizeRoute };
+
+// Any of the functions that talk to the python file are made with chatgpt, I did not learn how to do this at tripleten.

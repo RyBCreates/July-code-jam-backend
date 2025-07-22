@@ -46,26 +46,13 @@ def optimize_route(locations):
 
 def main():
     try:
-        # Hardcoded test input (just for testing)
-        locations = [
-            {
-                "location_name": "Rocky Mountain NP",
-                "trail_name": "Bear Lake Loop",
-                "latitude": "40.31196",
-                "longitude": "-105.64581"
-            },
-            {
-                "location_name": "Maroon Bells",
-                "trail_name": "Maroon Lake Scenic Loop Trail",
-                "latitude": "39.09991",
-                "longitude": "-106.94192"
-            }
-        ]
+        input_data = sys.stdin.read()
+        parsed = json.loads(input_data)
+        locations = parsed["locations"]
         result = optimize_route(locations)
         print(json.dumps(result))
     except Exception as e:
         print(json.dumps({"error": str(e)}))
-
 
 if __name__ == "__main__":
     main()
