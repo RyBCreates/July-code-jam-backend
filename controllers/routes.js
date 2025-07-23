@@ -1,5 +1,8 @@
 const { spawn } = require("child_process");
 const path = require("path");
+require("dotenv").config();
+
+const pythonPath = process.env.PYTHON_PATH || "python3";
 
 const optimizeRoute = (req, res) => {
   const locations = req.body.locations;
@@ -10,7 +13,7 @@ const optimizeRoute = (req, res) => {
       .json({ message: "Please provide at least 2 locations." });
   }
 
-  const python = spawn(path.join(__dirname, "../venv/bin/python"), [
+  const python = spawn(pythonPath, [
     path.join(__dirname, "../scripts/newOptimalRoute.py"),
   ]);
 
