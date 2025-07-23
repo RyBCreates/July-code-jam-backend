@@ -10,7 +10,7 @@ const optimizeRoute = (req, res) => {
       .json({ message: "Please provide at least 2 locations." });
   }
 
-  const python = spawn("python3", [
+  const python = spawn(path.join(__dirname, "../venv/bin/python"), [
     path.join(__dirname, "../scripts/newOptimalRoute.py"),
   ]);
 
