@@ -20,7 +20,9 @@ const optimizeRoute = (req, res) => {
   const locations = req.body.locations;
 
   if (!Array.isArray(locations) || locations.length < 2) {
-    return res.status(400).json({ message: "Please provide at least 2 locations." });
+    return res
+      .status(400)
+      .json({ message: "Please provide at least 2 locations." });
   }
 
   const python = spawn(pythonPath, [scriptPath]);
@@ -49,7 +51,9 @@ const optimizeRoute = (req, res) => {
 
   python.on("error", (err) => {
     console.error("Failed to start Python process:", err);
-    res.status(500).json({ message: "Python process failed", error: err.message });
+    res
+      .status(500)
+      .json({ message: "Python process failed", error: err.message });
   });
 
   python.stdin.write(JSON.stringify({ locations }));
