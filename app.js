@@ -5,8 +5,8 @@ const cors = require("cors");
 const app = express();
 
 const { PORT = 3003 } = process.env;
-const MONGODB_URI = process.env.MONGODB_URI;
-// const MONGODB_URI = "mongodb://127.0.0.1:27017/coloRUSH_db";
+// const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_URI = "mongodb://127.0.0.1:27017/coloRUSH_db";
 
 mongoose
   .connect(MONGODB_URI, {})
